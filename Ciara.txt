@@ -1,7 +1,8 @@
 Let's get started writing some awesome spring boot applications.
 
-Twinkle twinkle little star
+Twinkle twinkle little star,
 How i wonder what you are
-Up above the world so bright
+Up above the world so bright.
 
-Check git commands work again
+Check git commands work again.
+
