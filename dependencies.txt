@@ -1,0 +1,7 @@
+Spring Boot DevTools
+H2 Database
+Spring Data JPA
+MySQL Driver
+ThymeLeaf
+Spring Web
+Lombok
