@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import uk.ac.belfastmet.topten.service.TopTenService;
 
@@ -12,12 +13,14 @@ import uk.ac.belfastmet.topten.service.TopTenService;
 
 public class TopTenController {
 	
-	@GetMapping("")
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	//@GetMapping("")
 	public String homePage() {
 		return "index";
 	}
 	
-	@GetMapping("/topsingles")
+	@RequestMapping(value = "/topsingles", method = RequestMethod.GET)
+	//@GetMapping("/topsingles")
 	public String singlesPage(Model model) {
 		
 		TopTenService topTenService = new TopTenService();
@@ -27,7 +30,8 @@ public class TopTenController {
 		return "topsingles";
 	}
 	
-	@GetMapping("/topalbums")
+	@RequestMapping(value = "/topalbums", method = RequestMethod.GET)
+	//@GetMapping("/topalbums")
 	public String albumsPage(Model model) {
 		
 		TopTenService topTenService = new TopTenService();

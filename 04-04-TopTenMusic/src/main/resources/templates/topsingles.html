@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="/">Home</a>
@@ -40,20 +40,19 @@
 
 <div class="container">
 
-<p>This site will contain information about the top ten singles</p>
 <table class="table table-striped">
 	<thead class="thead-dark">
 		<tr>
-			<th>Artist</th>
-			<th>Single</th>
-			<th>Image</th>
+			<th class="text-center">Artist</th>
+			<th class="text-center">Single</th>
+			<th class="text-center">Image</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr th:each="single: ${singles}">
-			<td th:text="${single.artist}"></td>
-			<td th:text="${single.title}"> </td>
-			<td><img th:src="@{/img/} + ${single.image}" height="150px" width="100px"></img></td>
+			<td class="text-center align-middle font-weight-bold" th:text="${single.artist}"></td>
+			<td class="text-center align-middle font-weight-bold" th:text="${single.title}"> </td>
+			<td><img class="mx-auto d-block" th:src="@{/img/} + ${single.image}" height="150px" width="100px"></img></td>
 		</tr>
 	</tbody>
 </table>
