@@ -37,7 +37,7 @@
 					<td class="text-center align-middle" th:text="${task.taskName}"></td>
 					<td class="text-center align-middle" th:text="${task.description}"></td>
 					<td class="text-center align-middle" th:text="${task.deadline}"></td>
-					<td class="text-center align-middle" th:text="${task.completed}"></td>
+					<td class="text-center align-middle" th:text="${task.completed}? 'Yes' : 'No'"></td>
 					<td class="text-center align-middle" th:text="${task.priority}"></td>
 					<td class="text-center align-middle" th:text="${task.assignedTo}"></td>
 				</tr>
