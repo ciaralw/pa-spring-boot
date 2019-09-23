@@ -26,6 +26,7 @@ public class TaskListController {
 		logger.info("Start of home page method");
 		
 		model.addAttribute("pageTitle", "To Do List");
+//		model.addAttribute("myName", "Ciara");
 		
 //		ArrayList<TaskList> listTasks = taskListService.getTasksListed();
 //		for(TaskList listTask :listTasks) {
@@ -42,6 +43,11 @@ public class TaskListController {
 		
 		logger.info("End of home page method");
 		return "index";
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginPage() {
+		return "login";
 	}
 	
 	
