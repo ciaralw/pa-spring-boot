@@ -42,6 +42,7 @@
 <table class="table table-striped">
 	<thead class="thead-dark">
 		<tr>
+			<th class="text-center">Position</th>
 			<th class="text-center">Artist</th>
 			<th class="text-center">Album</th>
 			<th class="text-center">Image</th>
@@ -49,6 +50,7 @@
 	</thead>
 	<tbody>
 		<tr th:each="album: ${albums}">
+			<td class="text-center align-middle font-weight-bold" th:text="${album.position}"></td>
 			<td class="text-center align-middle font-weight-bold" th:text="${album.artist}"></td>
 			<td class="text-center align-middle font-weight-bold" th:text="${album.title}"> </td>
 			<td><img class="mx-auto d-block" th:src="@{/img/} + ${album.image}" height="150px" width="100px"></img></td>

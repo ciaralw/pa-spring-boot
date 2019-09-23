@@ -43,6 +43,7 @@
 <table class="table table-striped">
 	<thead class="thead-dark">
 		<tr>
+			<th class="text-center">Position</th>
 			<th class="text-center">Artist</th>
 			<th class="text-center">Single</th>
 			<th class="text-center">Image</th>
@@ -50,6 +51,7 @@
 	</thead>
 	<tbody>
 		<tr th:each="single: ${singles}">
+			<td class="text-center align-middle font-weight-bold" th:text="${single.position}"></td>
 			<td class="text-center align-middle font-weight-bold" th:text="${single.artist}"></td>
 			<td class="text-center align-middle font-weight-bold" th:text="${single.title}"> </td>
 			<td><img class="mx-auto d-block" th:src="@{/img/} + ${single.image}" height="150px" width="100px"></img></td>
