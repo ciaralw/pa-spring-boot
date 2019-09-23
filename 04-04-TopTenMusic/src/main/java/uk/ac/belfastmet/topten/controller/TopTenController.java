@@ -19,6 +19,10 @@ public class TopTenController {
 	
 	Logger logger = LoggerFactory.getLogger(TopTenController.class);
 		
+	/**
+	 * 
+	 * @return Return the index html page
+	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	//@GetMapping("")
 	public String homePage() {
@@ -26,6 +30,11 @@ public class TopTenController {
 		return "index";
 	}
 	
+	/**
+	 * This method returns the top singles page and displays all values in the getTopTenSingles ArrayList
+	 * @param model The model of the top ten singles
+	 * @return Return the top singles html page
+	 */
 	@RequestMapping(value = "/topsingles", method = RequestMethod.GET)
 	//@GetMapping("/topsingles")
 	public String singlesPage(Model model) {
@@ -38,6 +47,11 @@ public class TopTenController {
 		return "topsingles";
 	}
 	
+	/**
+	 * 	This method returns the top albums page and displays all values in the getTopTenAlbums ArrayList
+	 * @param model The model of the top ten albums
+	 * @return Return the top albums html page
+	 */
 	@RequestMapping(value = "/topalbums", method = RequestMethod.GET)
 	//@GetMapping("/topalbums")
 	public String albumsPage(Model model) {

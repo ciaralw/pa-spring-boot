@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		 <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		<!-- Custom Styles  -->
+		
+		<title th:text="${pageTitle}"></title>
+	</head>
+	
+	<body>
+		<div class="jumbotron text-center bg-light">
+		<h1>To Do List</h1>
+		</div>
+		
+		<div class="container">
+		
+		<table class="table table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th class="text-center">Task</th>
+					<th class="text-center">Description</th>
+					<th class="text-center">Deadline</th>
+					<th class="text-center">Completed</th>
+					<th class="text-center">Priority</th>
+					<th class="text-center">Assigned To</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="task: ${tasks}">
+					<td class="text-center align-middle" th:text="${task.taskName}"></td>
+					<td class="text-center align-middle" th:text="${task.description}"></td>
+					<td class="text-center align-middle" th:text="${task.deadline}"></td>
+					<td class="text-center align-middle" th:text="${task.completed}"></td>
+					<td class="text-center align-middle" th:text="${task.priority}"></td>
+					<td class="text-center align-middle" th:text="${task.assignedTo}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		</div>
+		
+	</body>
+</html>
