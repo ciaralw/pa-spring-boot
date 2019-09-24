@@ -20,24 +20,30 @@ public class TaskListController {
 	
 	Logger logger = LoggerFactory.getLogger(TaskListController.class);
 
+	/**
+	 * 
+	 * @param model The model of the tasks list
+	 * @return Return the index html page
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
 		TaskListService taskListService = new TaskListService();
 		logger.info("Start of home page method");
 		
 		model.addAttribute("pageTitle", "To Do List");
-//		model.addAttribute("myName", "Ciara");
 		
-//		ArrayList<TaskList> listTasks = taskListService.getTasksListed();
-//		for(TaskList listTask :listTasks) {
-//			logger.info(listTask.toString());
-//		}
+		//Logger to see if task list is populating
+		ArrayList<TaskList> listTasks = taskListService.getTasksListed();
+		for(TaskList listTask :listTasks) {
+			logger.info(listTask.toString());
+		}
 
 		
 		model.addAttribute("tasks", taskListService.getTasksListed());
 		
-		ArrayList<TaskList> listTasks = taskListService.getTasksListed();
-		for(TaskList listTask :listTasks) {
+		//Logger to see if the getCompleted field is completed
+		ArrayList<TaskList> listTasks1 = taskListService.getTasksListed();
+		for(TaskList listTask :listTasks1) {
 			logger.info(Boolean.toString(listTask.getCompleted()));
 		}
 		
@@ -45,6 +51,10 @@ public class TaskListController {
 		return "index";
 	}
 	
+	/**
+	 * 
+	 * @return The login html page
+	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		return "login";
