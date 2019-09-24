@@ -1,8 +1,18 @@
 package uk.ac.belfastmet.tasklist.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "task")
 public class TaskList {
 	
 	//variables
+	private long id;
 	private String taskName;
 	private String description;
 	private String deadline;
@@ -25,8 +35,19 @@ public class TaskList {
 		this.priority = priority;
 		this.assignedTo = assignedTo;
 	}
-
+		
 	//getters and setters
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	@Column(name = "name")
 	public String getTaskName() {
 		return taskName;
 	}
@@ -35,6 +56,7 @@ public class TaskList {
 		this.taskName = taskName;
 	}
 
+	@Column(name = "description")
 	public String getDescription() {
 		return description;
 	}
@@ -54,11 +76,12 @@ public class TaskList {
 	public boolean getCompleted() {
 		return completed;
 	}
-
-	public void setStatus(boolean completed) {
+	
+	public void setCompleted(boolean completed) {
 		this.completed = completed;
 	}
 
+	@Column(name = "priority")
 	public String getPriority() {
 		return priority;
 	}
@@ -67,6 +90,7 @@ public class TaskList {
 		this.priority = priority;
 	}
 
+	@Column(name = "user")
 	public String getAssignedTo() {
 		return assignedTo;
 	}
@@ -78,5 +102,4 @@ public class TaskList {
 	public String toString() {
 		return taskName + " " + description + " " + deadline + " " + completed + " " + priority + " " + assignedTo;
 	}
-
 }

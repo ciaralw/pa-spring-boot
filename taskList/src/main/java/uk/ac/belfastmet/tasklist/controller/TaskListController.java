@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,17 +18,20 @@ import uk.ac.belfastmet.tasklist.domain.TaskList;
 @RequestMapping
 
 public class TaskListController {
+	@Autowired
+	private TaskListService taskListService;
 	
 	Logger logger = LoggerFactory.getLogger(TaskListController.class);
 
 	/**
-	 * 
+	 * This method returns the index page and displays all values in the getTasksListed ArrayList
 	 * @param model The model of the tasks list
 	 * @return Return the index html page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
-		TaskListService taskListService = new TaskListService();
+		//The @Autowired above removes the need for the below line as its automatically doing the same thing
+		//TaskListService taskListService = new TaskListService();
 		logger.info("Start of home page method");
 		
 		model.addAttribute("pageTitle", "To Do List");
@@ -37,7 +41,6 @@ public class TaskListController {
 		for(TaskList listTask :listTasks) {
 			logger.info(listTask.toString());
 		}
-
 		
 		model.addAttribute("tasks", taskListService.getTasksListed());
 		
@@ -49,6 +52,7 @@ public class TaskListController {
 		
 		logger.info("End of home page method");
 		return "index";
+		
 	}
 	
 	/**
@@ -57,8 +61,8 @@ public class TaskListController {
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
+		taskListService.getNumberOfTasks();
 		return "login";
 	}
-	
-	
+		
 }
