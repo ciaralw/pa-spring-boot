@@ -1,32 +1,40 @@
-<!-- <!DOCTYPE>
-<html>
-	<head>
-		<title>Login Page</title>
-	</head>	
-	<body>
-		<form action=>
-			ID: <br>
-			<input type="text" name="id">
-			<br>
-			Password: <br>
-			<input type="text" name="password">
-			<br>
-			<input type="submit" value="Submit">
-		</form>
-	</body>
-</html> -->
-
-
 <!-- Use form-control for width to be set to 100% -->
 <!-- Use form-group for any group of form controls (used with <div>) -->
 <!-- Use form-check for checkboxes and radios -->
 
 <!DOCTYPE>
-<html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
 	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		<!-- Custom Styles  -->
+	
+	
 		<title>Login Page</title>
 	</head>	
 	<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+			<ul class="navbar nav">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Tasks</a>
+				</li>
+			</ul>
+			<ul class="navbar nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="/login">Login</a>
+				</li>
+			</ul>
+		</nav> 
+	
+		<div class="jumbotron text-center bg-light">	
+		<h1 class="text-center">Login Page</h1>
+		</div>
 		<form>
 			<div class="form-group">
 				<label for="loginid">ID:</label> <br>

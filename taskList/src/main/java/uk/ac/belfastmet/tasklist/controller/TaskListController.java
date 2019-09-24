@@ -20,7 +20,7 @@ public class TaskListController {
 	
 	Logger logger = LoggerFactory.getLogger(TaskListController.class);
 
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
 		TaskListService taskListService = new TaskListService();
 		logger.info("Start of home page method");
