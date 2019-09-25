@@ -7,6 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author WAR14101792
+ *
+ */
 @Entity
 @Table(name = "task")
 public class TaskList {
@@ -21,12 +26,23 @@ public class TaskList {
 	private String assignedTo;
 	
 	//constructors
-	public TaskList() {
+	public TaskList() 
+	{	
 		super();
 	}
 
+	/** 
+	 * 
+	 * @param taskName - String taskName
+	 * @param description - String description
+	 * @param deadline - String deadline
+	 * @param completed - boolean completed
+	 * @param priority - String priority
+	 * @param assignedTo - String assignedTo
+	*/
 	public TaskList(String taskName, String description, String deadline, boolean completed, String priority,
-			String assignedTo) {
+			String assignedTo) 
+	{	
 		super();
 		this.taskName = taskName;
 		this.description = description;
@@ -37,6 +53,7 @@ public class TaskList {
 	}
 		
 	//getters and setters
+	//@Column used to map to SQL fields
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {

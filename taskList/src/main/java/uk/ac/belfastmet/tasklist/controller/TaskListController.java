@@ -14,6 +14,11 @@ import uk.ac.belfastmet.tasklist.service.TaskListService;
 import uk.ac.belfastmet.tasklist.controller.TaskListController;
 import uk.ac.belfastmet.tasklist.domain.TaskList;
 
+/**
+ * 
+ * @author WAR14101792
+ *
+ */
 @Controller
 @RequestMapping
 
@@ -26,7 +31,7 @@ public class TaskListController {
 	/**
 	 * This method returns the index page and displays all values in the getTasksListed ArrayList
 	 * @param model The model of the tasks list
-	 * @return Return the index html page
+	 * @return Returns the index html page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(Model model) {
@@ -36,19 +41,19 @@ public class TaskListController {
 		
 		model.addAttribute("pageTitle", "To Do List");
 		
-		//Logger to see if task list is populating
-		ArrayList<TaskList> listTasks = taskListService.getTasksListed();
-		for(TaskList listTask :listTasks) {
-			logger.info(listTask.toString());
-		}
+//Logger to see if task list is populating
+//		ArrayList<TaskList> listTasks = taskListService.getTasksListed();
+//		for(TaskList listTask :listTasks) {
+//			logger.info(listTask.toString());
+//		}
 		
 		model.addAttribute("tasks", taskListService.getTasksListed());
 		
-		//Logger to see if the getCompleted field is completed
-		ArrayList<TaskList> listTasks1 = taskListService.getTasksListed();
-		for(TaskList listTask :listTasks1) {
-			logger.info(Boolean.toString(listTask.getCompleted()));
-		}
+//Logger to see if the getCompleted field is completed
+//		ArrayList<TaskList> listTasks1 = taskListService.getTasksListed();
+//		for(TaskList listTask :listTasks1) {
+//			logger.info(Boolean.toString(listTask.getCompleted()));
+//		}
 		
 		logger.info("End of home page method");
 		return "index";
@@ -56,12 +61,12 @@ public class TaskListController {
 	}
 	
 	/**
-	 * 
+	 * This method returns the login page
 	 * @return The login html page
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
-		taskListService.getNumberOfTasks();
+		//taskListService.getNumberOfTasks();
 		return "login";
 	}
 		
