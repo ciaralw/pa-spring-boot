@@ -23,8 +23,6 @@ public class TaskListService {
 	
 	@Autowired
 	private TaskListRepository taskListRepository; 
-
-	private ArrayList<TaskList> tasksListed;
 	
 	//This was temporary to count the number of tasks in the task list in the DB
 	//	public Iterable<TaskList> getNumberOfTasks() 
@@ -36,16 +34,18 @@ public class TaskListService {
 	 * 
 	 * @return Returns the task list from the DB, connected via the repository
 	 */
+	private ArrayList<TaskList> tasksListed;
+	
 	public Iterable<TaskList> getTasksListed(){
 	this.tasksListed = new ArrayList<TaskList>();
-		
 	Iterable<TaskList> taskList = taskListRepository.findAll();
+	
 	Iterator<TaskList> iterator = taskList.iterator();
 	while(iterator.hasNext()) 
 	{
 		logger.info("{}", iterator.next().toString());
 	}
-		
+	
 	return taskList;
 	}
 	

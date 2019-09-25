@@ -24,7 +24,7 @@ import uk.ac.belfastmet.tasklist.domain.TaskList;
 
 public class TaskListController {
 	@Autowired
-	private TaskListService taskListService;
+	private TaskListService taskListService;	
 	
 	Logger logger = LoggerFactory.getLogger(TaskListController.class);
 
